@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="บทเรียน Prefix แบบ Interactive พร้อม Word Builder และเกมฝึกฝน 4 รูปแบบ">
+  <meta name="theme-color" content="#7557e8">
+  <title>เรียนรู้ Prefix | Prefix Planet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="main.js" defer></script>
+  <script src="lesson.js" defer></script>
+</head>
+<body>
+  <noscript><div class="noscript">กรุณาเปิด JavaScript เพื่อใช้บทเรียนและเกมฝึกฝนแบบโต้ตอบ</div></noscript>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <header class="page-hero">
+      <div class="container">
+        <span class="eyebrow">📘 Interactive Lesson</span>
+        <h1>เรียนรู้ <span class="gradient-text en">Prefixes</span></h1>
+        <p>ค่อย ๆ สำรวจส่วนประกอบของคำ เข้าใจกลุ่มความหมายและกฎสำคัญ แล้วทดลองสร้างคำด้วยตัวเอง</p>
+        <div class="puffy-wrap" style="justify-content:center;margin-top:24px">
+          <div class="puffy" data-mood="curious" role="img" aria-label="Puffy กำลังสงสัย"><div class="puffy-face" aria-hidden="true"><span class="puffy-eye left"></span><span class="puffy-eye right"></span><span class="puffy-mouth"></span></div></div>
+          <div class="speech-bubble">Prefix ชิ้นเล็ก ๆ สามารถเปลี่ยนความหมายของคำได้มากกว่าที่คิด!</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-sm" aria-labelledby="lesson-heading">
+      <div class="container lesson-layout">
+        <aside class="lesson-sidebar card" aria-label="สารบัญบทเรียน">
+          <strong id="lesson-heading">แผนที่บทเรียน</strong>
+          <div class="progress-track" style="margin:12px 0"><div class="progress-fill" id="lesson-progress" style="--progress:0%"></div></div>
+          <div class="lesson-nav" role="tablist" aria-label="เลือกบทเรียน">
+            <button class="active" type="button" role="tab" aria-selected="true" aria-controls="lesson-1" data-lesson-tab="1">1 · Prefix คืออะไร</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="lesson-2" data-lesson-tab="2">2 · ส่วนประกอบของคำ</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="lesson-3" data-lesson-tab="3">3 · กลุ่มความหมาย</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="lesson-4" data-lesson-tab="4">4 · กฎการเปลี่ยนรูป</button>
+          </div>
+        </aside>
+
+        <div>
+          <article class="lesson-pane card active" id="lesson-1" role="tabpanel" data-lesson-pane="1">
+            <span class="chip">บทที่ 1</span>
+            <h2>Prefix คืออะไร?</h2>
+            <p><strong class="en">Prefix</strong> คือกลุ่มตัวอักษรที่เติมไว้ <strong>หน้าคำหลัก</strong> เพื่อเปลี่ยนหรือเพิ่มความหมายของคำเดิม ส่วนคำหลักก่อนเติม Prefix เรียกว่า <strong class="en">Base Word</strong></p>
+            <div class="formula-box" aria-label="Prefix บวก Base Word เท่ากับ New Word">
+              <span class="part-prefix">Prefix</span><span>+</span><span class="part-base">Base Word</span><span>=</span><span class="part-new">New Word</span>
+            </div>
+            <div class="word-example-grid">
+              <div class="word-example"><strong><span class="part-prefix">un</span> + <span class="part-base">happy</span> = <span class="part-new">unhappy</span></strong><br><span class="muted">ไม่มีความสุข</span></div>
+              <div class="word-example"><strong><span class="part-prefix">re</span> + <span class="part-base">write</span> = <span class="part-new">rewrite</span></strong><br><span class="muted">เขียนใหม่</span></div>
+              <div class="word-example"><strong><span class="part-prefix">pre</span> + <span class="part-base">view</span> = <span class="part-new">preview</span></strong><br><span class="muted">ดูตัวอย่างล่วงหน้า</span></div>
+              <div class="word-example"><strong><span class="part-prefix">dis</span> + <span class="part-base">agree</span> = <span class="part-new">disagree</span></strong><br><span class="muted">ไม่เห็นด้วย</span></div>
+              <div class="word-example"><strong><span class="part-prefix">mis</span> + <span class="part-base">understand</span> = <span class="part-new">misunderstand</span></strong><br><span class="muted">เข้าใจผิด</span></div>
+            </div>
+            <div class="soft-panel" style="margin-top:20px"><strong>จำง่าย ๆ</strong><p style="margin:4px 0 0">Prefix อยู่หน้า Base Word และมักมีความหมายเป็นของตัวเอง เมื่อรวมกันจึงช่วยให้เราเดาคำใหม่ได้</p></div>
+            <button class="btn" type="button" data-complete-lesson="1" style="margin-top:20px">✓ เรียนบทนี้สำเร็จ</button>
+          </article>
+
+          <article class="lesson-pane card" id="lesson-2" role="tabpanel" data-lesson-pane="2" hidden>
+            <span class="chip chip-cyan">บทที่ 2</span>
+            <h2>มองเห็นส่วนประกอบของคำ</h2>
+            <p>แยกสีแต่ละส่วนเพื่อดูว่า Prefix เปลี่ยนความหมายของ Base Word อย่างไร</p>
+            <div class="formula-box">
+              <span class="part-prefix">un</span><span>+</span><span class="part-base">kind</span><span>=</span><span class="part-new">unkind</span>
+            </div>
+            <div class="meaning-groups">
+              <div class="card" style="border-top:5px solid var(--primary)"><span class="chip">Prefix</span><h3 class="part-prefix en">un-</h3><p>หมายถึง “ไม่”</p></div>
+              <div class="card" style="border-top:5px solid var(--cyan)"><span class="chip chip-cyan">Base Word</span><h3 class="part-base en">kind</h3><p>หมายถึง “ใจดี”</p></div>
+              <div class="card" style="border-top:5px solid var(--pink)"><span class="chip chip-pink">New Word</span><h3 class="part-new en">unkind</h3><p>คำศัพท์ใหม่</p></div>
+              <div class="card" style="border-top:5px solid var(--gold)"><span class="chip chip-gold">New Meaning</span><h3 class="part-meaning">ไม่ใจดี</h3><p>ความหมายหลังเติม Prefix</p></div>
+            </div>
+            <h3 style="margin-top:24px">ลองแยกคำ</h3>
+            <div class="word-example-grid">
+              <div class="word-example"><strong class="en">re + use = reuse</strong><br><span class="muted">ใช้ + อีกครั้ง = นำกลับมาใช้ใหม่</span></div>
+              <div class="word-example"><strong class="en">over + work = overwork</strong><br><span class="muted">ทำงาน + มากเกินไป = ทำงานหนักเกินไป</span></div>
+              <div class="word-example"><strong class="en">sub + marine = submarine</strong><br><span class="muted">ใต้ + ทะเล = เรือดำน้ำ</span></div>
+              <div class="word-example"><strong class="en">inter + school = interschool</strong><br><span class="muted">ระหว่าง + โรงเรียน = ระหว่างโรงเรียน</span></div>
+            </div>
+            <button class="btn" type="button" data-complete-lesson="2" style="margin-top:20px">✓ เรียนบทนี้สำเร็จ</button>
+          </article>
+
+          <article class="lesson-pane card" id="lesson-3" role="tabpanel" data-lesson-pane="3" hidden>
+            <span class="chip chip-pink">บทที่ 3</span>
+            <h2>กลุ่มความหมายของ Prefix</h2>
+            <p>การจำเป็นกลุ่มช่วยให้เลือกใช้ Prefix ได้เร็วขึ้น และเดาคำที่ไม่คุ้นเคยได้ดีขึ้น</p>
+            <div class="meaning-groups">
+              <div class="meaning-group card" style="--group-color:var(--pink)"><h3 class="en">Negative / Opposite</h3><p><strong>un-, dis-, in-, im-, il-, ir-, anti-</strong><br>ไม่ ตรงข้าม หรือ ต่อต้าน</p></div>
+              <div class="meaning-group card" style="--group-color:var(--gold)"><h3 class="en">Time / Order</h3><p><strong>pre-, post-, re-</strong><br>ก่อน หลัง หรือ อีกครั้ง</p></div>
+              <div class="meaning-group card" style="--group-color:var(--cyan)"><h3 class="en">Number</h3><p><strong>mono-, bi-, tri-, multi-, semi-</strong><br>หนึ่ง สอง สาม หลาย หรือ ครึ่ง</p></div>
+              <div class="meaning-group card" style="--group-color:var(--primary)"><h3 class="en">Position / Direction</h3><p><strong>sub-, trans-, inter-</strong><br>ใต้ ข้าม หรือ ระหว่าง</p></div>
+              <div class="meaning-group card" style="--group-color:var(--green)"><h3 class="en">Degree / Amount</h3><p><strong>over-, under-, super-</strong><br>มากเกินไป น้อยเกินไป หรือ เหนือกว่า</p></div>
+              <div class="meaning-group card" style="--group-color:#4da4d9"><h3 class="en">Relationship</h3><p><strong>co-, inter-</strong><br>ร่วมกัน หรือ เชื่อมโยงระหว่างกัน</p></div>
+            </div>
+            <div class="soft-panel" style="margin-top:20px"><strong>เทคนิคการเดาคำ</strong><p style="margin:4px 0 0">หา Prefix ก่อน → แยก Base Word → รวมความหมาย → ตรวจสอบกับบริบทของประโยค</p></div>
+            <button class="btn" type="button" data-complete-lesson="3" style="margin-top:20px">✓ เรียนบทนี้สำเร็จ</button>
+          </article>
+
+          <article class="lesson-pane card" id="lesson-4" role="tabpanel" data-lesson-pane="4" hidden>
+            <span class="chip chip-gold">บทที่ 4</span>
+            <h2>กฎการเปลี่ยนรูป in-, im-, il-, ir-</h2>
+            <p>Prefix กลุ่มนี้หมายถึง <strong>“ไม่”</strong> เหมือนกัน แต่อาจเปลี่ยนรูปให้พูดง่ายขึ้นตามตัวอักษรต้นของ Base Word</p>
+            <div class="morph-grid">
+              <div class="morph-card card"><span class="chip">in-</span><div class="big en">inactive</div><p class="muted">ไม่กระตือรือร้น<br>ใช้กับคำทั่วไปหลายคำ</p></div>
+              <div class="morph-card card"><span class="chip chip-pink">im-</span><div class="big en">impossible</div><p class="muted">เป็นไปไม่ได้<br>มักอยู่หน้า m, p, b</p></div>
+              <div class="morph-card card"><span class="chip chip-gold">il-</span><div class="big en">illegal</div><p class="muted">ผิดกฎหมาย<br>อยู่หน้าคำที่ขึ้นต้นด้วย l</p></div>
+              <div class="morph-card card"><span class="chip chip-cyan">ir-</span><div class="big en">irregular</div><p class="muted">ไม่สม่ำเสมอ<br>อยู่หน้าคำที่ขึ้นต้นด้วย r</p></div>
+            </div>
+            <div class="soft-panel"><strong>สรุปแบบง่าย</strong><p style="margin:4px 0 0">คิดว่าเป็น Prefix ตระกูลเดียวกันที่ “ปรับเสียงให้เข้ากับคำข้างหลัง” เช่น possible เริ่มด้วย p จึงใช้ <span class="en">impossible</span> ไม่ใช่ <span class="en">inpossible</span></p></div>
+            <div class="word-example-grid" style="margin-top:15px">
+              <div class="word-example"><strong class="en">in + complete = incomplete</strong><br><span class="muted">ไม่สมบูรณ์</span></div>
+              <div class="word-example"><strong class="en">im + mature = immature</strong><br><span class="muted">ยังไม่เป็นผู้ใหญ่</span></div>
+              <div class="word-example"><strong class="en">il + logical = illogical</strong><br><span class="muted">ไม่สมเหตุสมผล</span></div>
+              <div class="word-example"><strong class="en">ir + responsible = irresponsible</strong><br><span class="muted">ไม่มีความรับผิดชอบ</span></div>
+            </div>
+            <button class="btn" type="button" data-complete-lesson="4" style="margin-top:20px">✓ เรียนบทนี้สำเร็จ</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="builder" aria-labelledby="builder-title">
+      <div class="container">
+        <div class="section-title"><span class="eyebrow">🧩 Word Builder</span><h2 id="builder-title">ห้องทดลองสร้างคำศัพท์</h2><p>เลือก Prefix และ Base Word แล้วดูว่าเมื่อนำมารวมกันจะเกิดคำอะไร</p></div>
+        <div class="builder card">
+          <div class="builder-grid">
+            <div class="field"><label for="builder-prefix">เลือก Prefix</label><select id="builder-prefix" aria-label="เลือก Prefix"></select></div>
+            <span class="builder-symbol" aria-hidden="true" style="font-size:2rem">+</span>
+            <div class="field"><label for="builder-base">เลือก Base Word</label><select id="builder-base" aria-label="เลือก Base Word"></select></div>
+            <button class="btn" id="build-word" type="button">⚡ สร้างคำศัพท์</button>
+          </div>
+          <div class="builder-result soft-panel" id="builder-result" aria-live="polite">
+            <div><div class="builder-word"><span class="part-prefix">Prefix</span> + <span class="part-base">Base</span></div><p class="muted">เลือกชิ้นส่วนแล้วกด “สร้างคำศัพท์”</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="practice" aria-labelledby="practice-title">
+      <div class="container">
+        <div class="section-title"><span class="eyebrow">🎮 Practice Zone</span><h2 id="practice-title">เกมฝึกฝนก่อนออกภารกิจ</h2><p>เฉลยทันที ฝึกซ้ำได้ไม่จำกัด และรับ Prefix Crystal เมื่อผ่านเกม</p></div>
+        <div class="game-tabs" role="tablist" aria-label="เลือกเกมฝึกฝน">
+          <button class="game-tab active" type="button" role="tab" aria-selected="true" data-game="match">1 · Match the Meaning</button>
+          <button class="game-tab" type="button" role="tab" aria-selected="false" data-game="build">2 · Build a Word</button>
+          <button class="game-tab" type="button" role="tab" aria-selected="false" data-game="detective">3 · Prefix Detective</button>
+          <button class="game-tab" type="button" role="tab" aria-selected="false" data-game="sentence">4 · Sentence Rescue</button>
+        </div>
+        <div class="game-shell card" id="game-shell">
+          <div class="game-hud">
+            <div class="hud-item">คะแนน<strong id="game-score">0</strong></div>
+            <div class="hud-item">Combo<strong id="game-combo">×0</strong></div>
+            <div class="hud-item">Crystal<strong id="game-crystal">◇</strong></div>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="game-progress" style="--progress:0%"></div></div>
+          <div class="game-question" id="game-question" style="margin-top:16px" aria-live="polite"></div>
+          <div class="game-options" id="game-options"></div>
+          <div class="game-dropzone" id="game-dropzone" tabindex="0">แตะคำตอบ หรือลากคำตอบมาวางที่นี่</div>
+          <div class="game-feedback" id="game-feedback" role="status">เลือกคำตอบที่คิดว่าถูกต้อง Puffy จะช่วยอธิบายให้ทันที</div>
+          <div class="question-actions">
+            <button class="btn btn-secondary" id="game-hint" type="button">💡 คำใบ้</button>
+            <button class="btn" id="game-next" type="button" disabled>ข้อต่อไป →</button>
+            <button class="btn btn-secondary" id="game-restart" type="button">↻ เล่นใหม่</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container card" style="text-align:center">
+        <span class="eyebrow">พร้อมแล้วหรือยัง?</span>
+        <h2>พิชิต Prefix Galaxy Mission</h2>
+        <p class="muted">ตอบคำถาม 45 ข้อ ผ่านดาวภารกิจ 5 ดวง และช่วย Puffy กู้คืน Prefix Crystals</p>
+        <a class="btn btn-gold" href="mission.html" data-requires-profile>🚀 เข้าสู่ภารกิจ 45 ข้อ</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
