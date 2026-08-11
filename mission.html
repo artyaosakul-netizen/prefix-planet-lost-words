@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prefix Galaxy Mission แบบทดสอบหลังเรียน 45 ข้อในรูปแบบเกมผจญภัย 5 ดาวภารกิจ">
+  <meta name="theme-color" content="#171a3e">
+  <title>ภารกิจ 45 ข้อ | Prefix Planet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="main.js" defer></script>
+  <script src="questions.js" defer></script>
+  <script src="mission.js" defer></script>
+  <script type="module" src="three-scene.js"></script>
+</head>
+<body>
+  <noscript><div class="noscript">กรุณาเปิด JavaScript เพื่อเริ่มแบบทดสอบและบันทึกคำตอบ</div></noscript>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <header class="page-hero" id="mission-page-hero">
+      <div class="container">
+        <span class="eyebrow">💎 Prefix Galaxy Mission</span>
+        <h1>ภารกิจกู้คืนคำศัพท์ทั้ง <span class="gradient-text en">45</span> คำ</h1>
+        <p>Prefix Crystals หายไปจากจักรวาล ทำให้คำศัพท์สับสน เดินทางผ่านดาว 5 ดวง ตอบให้ครบ และช่วย Puffy ฟื้นฟู Prefix Planet</p>
+      </div>
+    </header>
+
+    <section class="section-sm" id="mission-start-section">
+      <div class="container mission-overview">
+        <article class="learner-ticket card" id="learner-ticket">
+          <span class="eyebrow">Explorer Boarding Pass</span>
+          <div class="learner-line">
+            <div class="learner-avatar" id="mission-avatar" aria-label="Avatar ผู้เรียน">👤</div>
+            <div><small class="muted">Word Explorer</small><h2 id="mission-name" style="margin:2px 0">ยังไม่ได้สร้างโปรไฟล์</h2><p id="mission-class" class="muted" style="margin:0">กรุณากรอกข้อมูลก่อนเริ่มภารกิจ</p></div>
+          </div>
+          <div class="mission-facts">
+            <div class="mission-fact"><small>จำนวนข้อ</small><strong>45 ข้อ</strong></div>
+            <div class="mission-fact"><small>คะแนนเต็ม</small><strong>45 คะแนน</strong></div>
+            <div class="mission-fact"><small>เวลาแนะนำ</small><strong>45 นาที</strong></div>
+            <div class="mission-fact"><small>เกณฑ์ผ่าน</small><strong>36 คะแนน</strong></div>
+          </div>
+          <div class="soft-panel">
+            <strong>กติกาภารกิจ</strong>
+            <ul style="margin-bottom:0">
+              <li>แสดงครั้งละ 1 ข้อ และกลับไปแก้คำตอบได้ก่อนส่ง</li>
+              <li>ทำเครื่องหมายข้อที่อยากกลับมาทบทวนได้</li>
+              <li>Crystal ระหว่างสอบหมายถึง “ตอบครบ” ไม่ได้บอกว่าถูกหรือผิด</li>
+              <li>เฉลยจะแสดงหลังส่งคำตอบแล้วเท่านั้น</li>
+            </ul>
+          </div>
+          <div class="btn-row" style="margin-top:20px">
+            <button class="btn" id="start-mission" type="button">🚀 เริ่มภารกิจ</button>
+            <button class="btn btn-secondary" id="edit-mission-profile" type="button">👤 แก้ไขโปรไฟล์</button>
+          </div>
+          <p id="mission-start-message" class="muted" role="status" style="margin:12px 0 0"></p>
+        </article>
+
+        <div class="mission-scene" id="mission-scene" data-scene="mission" aria-label="แผนที่จักรวาลสามมิติแสดงดาวภารกิจ 5 ดวง">
+          <div class="scene-fallback" id="mission-fallback" aria-hidden="true">
+            <div class="css-galaxy-map"><span class="css-map-planet">1</span><span class="css-map-planet">2</span><span class="css-map-planet">3</span><span class="css-map-planet">4</span><span class="css-map-planet">5</span></div>
+          </div>
+          <span class="scene-hint">5 ดาว · ดาวละ 9 ข้อ</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="exam-shell" id="exam-shell" hidden aria-label="พื้นที่ทำแบบทดสอบ">
+      <div class="container">
+        <div class="exam-topbar glass">
+          <div class="exam-hud">
+            <div><strong id="exam-planet-name">Meaning Moon</strong><br><small class="muted" id="exam-counter">ข้อที่ 1 จาก 45</small></div>
+            <div class="crystal-counter" aria-label="จำนวน Crystal ที่ตอบครบ"><span aria-hidden="true">💎</span> <strong id="crystal-count">0/5</strong></div>
+            <div class="timer" id="mission-timer" aria-label="เวลาที่เหลือ">45:00</div>
+            <button class="icon-btn" id="focus-mode" type="button" aria-label="เปิด Focus Mode" aria-pressed="false">🎯</button>
+            <div class="energy-wrap">
+              <div class="energy-label"><span>พลังยาน</span><span id="energy-label">0%</span></div>
+              <div class="energy-bar"><div class="energy-fill" id="energy-fill" style="--energy:0%"></div></div>
+            </div>
+          </div>
+          <div class="planet-rail" id="planet-rail" aria-label="ความก้าวหน้าดาวภารกิจ">
+            <div class="ship-marker" id="ship-marker" aria-hidden="true">🚀</div>
+            <div class="planet-node active" data-planet-node="1">🌙 <span>Meaning</span></div>
+            <div class="planet-node" data-planet-node="2">🌲 <span>Base Word</span></div>
+            <div class="planet-node" data-planet-node="3">⚙️ <span>Factory</span></div>
+            <div class="planet-node" data-planet-node="4">🏙️ <span>Sentence</span></div>
+            <div class="planet-node" data-planet-node="5">🌌 <span>Master</span></div>
+          </div>
+        </div>
+
+        <div class="exam-layout">
+          <article class="question-card card" id="question-card" aria-live="polite">
+            <div class="question-meta">
+              <div><span class="chip" id="question-type">Multiple Choice</span> <span class="chip chip-gold" id="boss-chip" hidden>👑 BOSS</span></div>
+              <button class="btn btn-secondary btn-sm" id="flag-question" type="button" aria-pressed="false">☆ ทำเครื่องหมายไว้ทบทวน</button>
+            </div>
+            <h2 class="question-text en" id="question-text">กำลังโหลดคำถาม…</h2>
+            <div class="answer-options" id="answer-options" role="radiogroup" aria-labelledby="question-text"></div>
+            <div class="question-actions">
+              <button class="btn btn-secondary" id="previous-question" type="button">← ข้อก่อนหน้า</button>
+              <div class="center-actions"><button class="btn btn-gold" id="save-next-question" type="button">บันทึกและไปข้อต่อไป →</button></div>
+              <button class="btn btn-secondary" id="next-question" type="button">ข้อต่อไป →</button>
+            </div>
+          </article>
+
+          <aside class="navigator card" aria-labelledby="navigator-title">
+            <div class="puffy-wrap">
+              <div class="puffy" data-mood="encourage" role="img" aria-label="Puffy กำลังให้กำลังใจ"><div class="puffy-face" aria-hidden="true"><span class="puffy-eye left"></span><span class="puffy-eye right"></span><span class="puffy-mouth"></span></div></div>
+              <div><strong id="navigator-title">Mission Navigator</strong><p class="muted" id="puffy-message" style="font-size:.78rem;margin:4px 0">เดินทางมาได้ดีมาก!</p></div>
+            </div>
+            <div class="navigator-grid" id="question-navigator" aria-label="เลือกหมายเลขข้อ"></div>
+            <div class="legend">
+              <span><i class="legend-dot answered"></i> ตอบแล้ว</span>
+              <span><i class="legend-dot current"></i> กำลังทำ</span>
+              <span><i class="legend-dot flagged"></i> ทำเครื่องหมายไว้</span>
+              <span><i class="legend-dot"></i> ยังไม่ตอบ</span>
+            </div>
+            <button class="btn btn-block" id="submit-mission" type="button" style="margin-top:16px">ส่งคำตอบทั้งหมด</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="transition-overlay" id="planet-transition" role="dialog" aria-modal="true" aria-labelledby="transition-title" hidden>
+    <div>
+      <div class="crystal-big" aria-hidden="true">💎</div>
+      <h2 id="transition-title">ได้รับ Prefix Crystal!</h2>
+      <p id="transition-message">ตอบครบ 9 ข้อบนดาวดวงนี้แล้ว</p>
+      <button class="btn btn-gold" id="skip-transition" type="button">เดินทางต่อ →</button>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+</body>
+</html>
