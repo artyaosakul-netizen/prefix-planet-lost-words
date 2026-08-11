@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ผลคะแนน Prefix Galaxy Mission คะแนนรายดาว Badge และเฉลยครบ 45 ข้อ">
+  <meta name="theme-color" content="#7557e8">
+  <title>ผลการเรียนและเฉลย | Prefix Planet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="main.js" defer></script>
+  <script src="questions.js" defer></script>
+  <script src="result.js" defer></script>
+</head>
+<body>
+  <noscript><div class="noscript">กรุณาเปิด JavaScript เพื่อคำนวณคะแนนและแสดงเฉลย</div></noscript>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <header class="page-hero">
+      <div class="container">
+        <span class="eyebrow">🏆 Mission Report</span>
+        <h1>ผลการเรียนและ<span class="gradient-text">เฉลย</span></h1>
+        <p>ตรวจคะแนนรายดาว วิเคราะห์จุดที่ควรทบทวน และดูเหตุผลของทุกคำตอบ</p>
+      </div>
+    </header>
+
+    <section class="section-sm" id="no-result" hidden>
+      <div class="narrow card" style="text-align:center">
+        <div style="font-size:4rem" aria-hidden="true">🛰️</div>
+        <h2>ยังไม่พบผลภารกิจ</h2>
+        <p class="muted">เริ่มทำแบบทดสอบ 45 ข้อและส่งคำตอบก่อน จึงจะดูคะแนนและเฉลยได้</p>
+        <div class="btn-row" style="justify-content:center"><a class="btn" href="mission.html" data-requires-profile>🚀 เริ่มภารกิจ</a><a class="btn btn-secondary" href="content.html">📘 ทบทวนบทเรียน</a></div>
+      </div>
+    </section>
+
+    <div id="result-content" hidden>
+      <section class="section-sm">
+        <div class="container">
+          <article class="result-hero-card card">
+            <div class="puffy-wrap" style="justify-content:center">
+              <div class="learner-avatar" id="result-avatar">🚀</div>
+              <div style="text-align:left"><small class="muted">Word Explorer</small><h2 id="result-name" style="margin:2px 0">ผู้เรียน</h2><p id="result-class" class="muted" style="margin:0"></p></div>
+            </div>
+            <div class="score-orb" aria-label="คะแนนรวม"><div><strong id="result-score">0</strong><span>/ 45 คะแนน</span></div></div>
+            <span class="chip chip-gold" id="result-rank">Keep Practicing</span>
+            <h2 id="result-status" style="margin:13px 0 5px">ควรกลับไปทบทวน</h2>
+            <p class="muted" id="result-message"></p>
+            <div class="result-stats">
+              <div class="result-stat"><small>เปอร์เซ็นต์</small><strong id="result-percent">0%</strong></div>
+              <div class="result-stat"><small>ตอบถูก</small><strong class="success-text" id="result-correct">0</strong></div>
+              <div class="result-stat"><small>ตอบผิด</small><strong class="danger-text" id="result-wrong">0</strong></div>
+              <div class="result-stat"><small>ไม่ได้ตอบ</small><strong class="gold-text" id="result-unanswered">0</strong></div>
+            </div>
+            <p class="muted" id="result-meta" style="margin:18px 0 0"></p>
+            <div class="btn-row result-actions" style="justify-content:center;margin-top:22px">
+              <button class="btn" id="retry-mission" type="button">↻ ทำข้อสอบอีกครั้ง</button>
+              <a class="btn btn-secondary" href="content.html">📘 ทบทวนเนื้อหา</a>
+              <button class="btn btn-secondary" id="print-result" type="button">🖨️ พิมพ์ผล A4</button>
+              <button class="btn btn-secondary" id="download-csv" type="button">⬇️ ดาวน์โหลด CSV</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-sm" aria-labelledby="analysis-title">
+        <div class="container result-grid">
+          <article class="chart-card card">
+            <span class="eyebrow">Galaxy Skill Map</span>
+            <h2 id="analysis-title">แผนที่ทักษะรายดาว</h2>
+            <div class="radar-chart" id="radar-chart" aria-label="กราฟเรดาร์คะแนนรายดาว"></div>
+          </article>
+          <article class="card">
+            <span class="eyebrow">Planet Scores</span>
+            <h2>คะแนนแต่ละดาว</h2>
+            <div class="planet-score-list" id="planet-score-list"></div>
+            <div class="soft-panel" style="margin-top:22px">
+              <h3>รางวัลที่ได้รับ</h3>
+              <div class="btn-row" id="result-badges"><span class="muted">ยังไม่ได้รับ Badge ในครั้งนี้</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-sm" aria-labelledby="history-title">
+        <div class="container card">
+          <div class="question-meta"><div><span class="eyebrow">Attempt History</span><h2 id="history-title">ประวัติย้อนหลัง 5 ครั้ง</h2></div><button class="btn btn-secondary btn-sm" type="button" data-action="clear-history">ล้างประวัติข้อสอบ</button></div>
+          <div style="overflow-x:auto"><table class="history-table"><thead><tr><th>ครั้ง</th><th>วันที่</th><th>คะแนน</th><th>เปอร์เซ็นต์</th><th>ระดับ</th></tr></thead><tbody id="history-body"></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="review-title">
+        <div class="container">
+          <div class="section-title"><span class="eyebrow">🔎 Answer Review</span><h2 id="review-title">เฉลยและคำอธิบายทั้ง 45 ข้อ</h2><p>ใช้ตัวกรองเพื่อดูเฉพาะข้อที่ตอบผิด ไม่ได้ตอบ หรือเลือกดูตามดาวภารกิจ</p></div>
+          <div class="review-toolbar card">
+            <div class="field"><label for="review-status">กรองตามผลคำตอบ</label><select id="review-status"><option value="all">ทั้งหมด</option><option value="correct">ตอบถูก</option><option value="incorrect">ตอบผิด</option><option value="unanswered">ไม่ได้ตอบ</option></select></div>
+            <div class="field"><label for="review-planet">กรองตามดาว</label><select id="review-planet"><option value="all">ดาวที่ 1–5 ทั้งหมด</option><option value="1">ดาวที่ 1 · Meaning Moon</option><option value="2">ดาวที่ 2 · Base Word Forest</option><option value="3">ดาวที่ 3 · Word Factory</option><option value="4">ดาวที่ 4 · Sentence City</option><option value="5">ดาวที่ 5 · Master Galaxy</option></select></div>
+          </div>
+          <div class="review-list" id="review-list"></div>
+        </div>
+      </section>
+
+      <section class="section-sm">
+        <div class="container card">
+          <div class="question-meta"><div><span class="eyebrow">Data Controls</span><h2>จัดการข้อมูลบนอุปกรณ์</h2><p class="muted" style="margin:0">การลบข้อมูลจะมีหน้าต่างยืนยันก่อนทุกครั้ง</p></div><button class="btn btn-danger" type="button" data-action="clear-all">ล้างข้อมูลการเรียนทั้งหมด</button></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
