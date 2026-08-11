@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="คลังคำศัพท์ Prefix ค้นหา กรอง บันทึกรายการโปรด และฝึกด้วย Flashcard">
+  <meta name="theme-color" content="#7557e8">
+  <title>คลังคำศัพท์ | Prefix Planet</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="main.js" defer></script>
+  <script src="vocabulary.js" defer></script>
+</head>
+<body>
+  <noscript><div class="noscript">กรุณาเปิด JavaScript เพื่อค้นหา กรอง และใช้ Flashcard</div></noscript>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <header class="page-hero">
+      <div class="container">
+        <span class="eyebrow">🪐 Word Library</span>
+        <h1>คลังคำศัพท์ <span class="gradient-text en">Prefix</span></h1>
+        <p>ค้นหาคำ แยกส่วนประกอบ ฟังเสียง และเก็บคำที่อยากทบทวนไว้เป็นรายการโปรด</p>
+        <div class="puffy-wrap" style="justify-content:center;margin-top:22px">
+          <div class="puffy" data-mood="happy" role="img" aria-label="Puffy กำลังดีใจ"><div class="puffy-face" aria-hidden="true"><span class="puffy-eye left"></span><span class="puffy-eye right"></span><span class="puffy-mouth"></span></div></div>
+          <div class="speech-bubble">ลองค้นจากคำว่า <span class="en">possible</span> หรือกรองหมวด <span class="en">Negative</span> ดูสิ!</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="vocab-toolbar card" aria-label="เครื่องมือค้นหาและกรองคำศัพท์">
+          <div class="field search-field">
+            <label for="vocab-search">ค้นหาคำศัพท์หรือความหมาย</label>
+            <input id="vocab-search" type="search" autocomplete="off" aria-describedby="vocab-count">
+          </div>
+          <div class="field"><label for="prefix-filter">Prefix</label><select id="prefix-filter"><option value="all">ทุก Prefix</option></select></div>
+          <div class="field"><label for="group-filter">กลุ่มความหมาย</label><select id="group-filter"><option value="all">ทุกกลุ่ม</option><option value="negative">Negative / Opposite</option><option value="time">Time / Order</option><option value="number">Number</option><option value="position">Position / Direction</option><option value="degree">Degree / Amount</option><option value="relationship">Relationship</option></select></div>
+          <div class="field"><label for="vocab-sort">เรียงลำดับ</label><select id="vocab-sort"><option value="az">A → Z</option><option value="za">Z → A</option><option value="prefix">ตาม Prefix</option></select></div>
+        </div>
+
+        <div class="vocab-actions">
+          <button class="btn" id="flashcard-mode" type="button">🃏 เปิด Flashcard</button>
+          <button class="btn btn-secondary" id="random-word" type="button">🎲 สุ่มคำศัพท์</button>
+          <button class="btn btn-secondary" id="favorite-filter" type="button" aria-pressed="false">♡ แสดงรายการโปรด</button>
+          <span class="chip" id="vocab-count" role="status">กำลังโหลดคำศัพท์…</span>
+        </div>
+
+        <div class="vocab-grid" id="vocab-grid" aria-live="polite">
+          <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container card" style="text-align:center">
+        <span class="eyebrow">ฝึกให้คล่อง</span>
+        <h2>นำคำศัพท์ไปใช้ในเกม</h2>
+        <p class="muted">เมื่อคุ้นกับความหมายแล้ว ลองฝึกจับคู่ สร้างคำ และเติมประโยค</p>
+        <a class="btn" href="content.html#practice">🎮 ไปยังเกมฝึกฝน</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
