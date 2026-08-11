@@ -1,0 +1,181 @@
+/* Prefix Planet — Mobile-first responsive refinements */
+
+@media (max-width: 1100px) {
+  .nav-links a { padding-inline: 7px; font-size: .78rem; }
+  .hero-grid { grid-template-columns: 1fr .85fr; }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+  .morph-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 920px) {
+  :root { --nav-height: 68px; }
+
+  .menu-toggle { display: inline-grid; }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 16px;
+    right: 16px;
+    display: grid;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 0 0 20px 20px;
+    background: var(--surface-solid);
+    box-shadow: var(--shadow);
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height .25s ease, opacity .2s ease, padding .25s ease;
+  }
+
+  .nav-links.open {
+    max-height: 470px;
+    padding: 12px;
+    border-color: var(--line);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a { padding: 11px 13px; font-size: .9rem; }
+  .brand span:last-child { display: none; }
+
+  .hero { min-height: auto; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-copy { text-align: center; }
+  .hero-description { margin-inline: auto; }
+  .hero .btn-row { justify-content: center; }
+  .hero-scene { width: min(600px, 100%); min-height: 430px; margin-inline: auto; }
+
+  .profile-layout,
+  .daily-card,
+  .mission-overview,
+  .result-grid { grid-template-columns: 1fr; }
+
+  .daily-visual { min-height: 260px; }
+  .lesson-layout { grid-template-columns: 1fr; }
+  .lesson-sidebar { position: static; overflow-x: auto; }
+  .lesson-nav { display: flex; min-width: max-content; }
+  .lesson-nav button { width: auto; }
+  .exam-layout { grid-template-columns: 1fr; }
+  .navigator { position: static; }
+  .navigator-grid { grid-template-columns: repeat(9, 1fr); }
+  .exam-hud { grid-template-columns: 1fr auto auto; }
+  .energy-wrap { grid-column: 1 / -1; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > :first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 720px) {
+  .section { padding: 54px 0; }
+  .section-sm { padding: 32px 0; }
+  .page-hero { padding-top: 44px; }
+  .card { padding: 20px; }
+  .nav-actions .progress-nav-btn { display: none; }
+
+  .form-grid,
+  .word-example-grid,
+  .meaning-groups,
+  .game-options,
+  .review-answer { grid-template-columns: 1fr; }
+
+  .feature-grid,
+  .progress-grid,
+  .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .feature-card { min-height: 205px; }
+  .profile-intro { min-height: 280px; }
+  .avatar-picker { grid-template-columns: repeat(3, 1fr); }
+  .builder-grid { grid-template-columns: 1fr; }
+  .builder-grid > .builder-symbol { display: none; }
+  .game-tabs { grid-template-columns: repeat(2, 1fr); }
+  .vocab-toolbar { grid-template-columns: 1fr 1fr; }
+  .vocab-toolbar .search-field { grid-column: 1 / -1; }
+
+  .exam-topbar { top: calc(var(--nav-height) + 4px); padding: 10px; }
+  .exam-hud { grid-template-columns: 1fr auto; }
+  .exam-hud .crystal-counter { display: none; }
+  .planet-rail { gap: 4px; }
+  .planet-node { padding: 7px 3px; font-size: .68rem; }
+  .question-card { min-height: 520px; padding: 20px; }
+  .question-actions { flex-wrap: wrap; }
+  .question-actions .center-actions { order: -1; width: 100%; }
+  .question-actions .center-actions .btn { width: 100%; }
+  .navigator-grid { grid-template-columns: repeat(9, 1fr); gap: 5px; }
+
+  .result-stats { grid-template-columns: repeat(2, 1fr); }
+  .review-toolbar { grid-template-columns: 1fr; }
+  .word-breakdown { grid-template-columns: repeat(2, 1fr); }
+  .planet-score-row { grid-template-columns: 110px 1fr 44px; }
+}
+
+@media (max-width: 520px) {
+  .container,
+  .narrow { width: min(100% - 22px, 1160px); }
+
+  .brand-orbit { width: 39px; height: 39px; }
+  .nav-actions { gap: 4px; }
+  .icon-btn { width: 39px; height: 39px; border-radius: 12px; }
+  .hero { padding-top: 38px; }
+  .hero h1 { font-size: clamp(3rem, 18vw, 4.8rem); }
+  .hero-scene { min-height: 360px; border-radius: 30px; }
+  .css-planet { width: 165px; height: 165px; }
+  .scene-hint { display: none; }
+
+  .feature-grid,
+  .progress-grid { grid-template-columns: 1fr; }
+  .feature-card { min-height: auto; }
+  .daily-details { padding: 24px 20px; }
+  .puffy-wrap { align-items: flex-start; }
+  .puffy { width: 66px; height: 61px; }
+  .puffy-face { inset: 11px 8px 12px; }
+  .puffy-eye { top: 13px; }
+  .puffy-eye.left { left: 10px; }
+  .puffy-eye.right { right: 10px; }
+  .puffy-mouth { bottom: 8px; }
+
+  .lesson-pane { padding: 20px; }
+  .formula-box { padding: 18px 10px; gap: 7px; }
+  .morph-grid { grid-template-columns: 1fr 1fr; }
+  .game-shell { padding: 18px; }
+  .game-hud { grid-template-columns: repeat(3, 1fr); font-size: .78rem; }
+  .vocab-toolbar { grid-template-columns: 1fr; }
+  .vocab-toolbar .search-field { grid-column: auto; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .vocab-actions .btn { flex: 1 1 46%; }
+
+  .mission-facts { grid-template-columns: 1fr 1fr; }
+  .mission-scene { min-height: 330px; }
+  .exam-hud { font-size: .8rem; }
+  .timer { min-width: 75px; font-size: 1.15rem; }
+  .planet-node span { display: none; }
+  .question-meta { align-items: flex-start; }
+  .answer-choice label { min-height: 62px; padding: 11px; }
+  .navigator-grid { grid-template-columns: repeat(6, 1fr); }
+
+  .score-orb { width: 160px; height: 160px; }
+  .score-orb strong { font-size: 2.8rem; }
+  .result-stats { grid-template-columns: 1fr 1fr; }
+  .word-breakdown { grid-template-columns: 1fr 1fr; }
+  .history-table { font-size: .8rem; }
+  .history-table th,
+  .history-table td { padding: 8px 5px; }
+
+  .modal { padding: 20px; border-radius: 23px; }
+  .modal-actions { display: grid; }
+  .modal-actions .btn { width: 100%; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid > :first-child { grid-column: auto; }
+}
+
+@media (max-width: 380px) {
+  .nav-actions .sound-btn { display: none; }
+  .btn-row { display: grid; }
+  .btn-row .btn { width: 100%; }
+  .avatar-picker { grid-template-columns: repeat(3, 1fr); }
+  .game-tabs { grid-template-columns: 1fr; }
+  .mission-facts { grid-template-columns: 1fr; }
+  .navigator-grid { grid-template-columns: repeat(5, 1fr); }
+}
