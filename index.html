@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prefix Planet: The Lost Words สื่อการเรียนรู้เรื่อง Prefix สำหรับนักเรียน ม.4–6 พร้อมเกมและภารกิจ 45 ข้อ">
+  <meta name="theme-color" content="#7557e8">
+  <title>Prefix Planet: The Lost Words</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="main.js" defer></script>
+  <script type="module" src="three-scene.js"></script>
+</head>
+<body>
+  <noscript><div class="noscript">เว็บไซต์นี้ต้องใช้ JavaScript เพื่อเปิดบทเรียน เกม และแบบทดสอบ กรุณาเปิด JavaScript แล้วโหลดหน้าใหม่</div></noscript>
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">🚀 English Learning Adventure · ม.4–6</span>
+          <h1 id="hero-title"><span class="gradient-text">Prefix</span><br>Planet</h1>
+          <p class="hero-tagline">เติมคำหน้า เปลี่ยนความหมาย พิชิตจักรวาลคำศัพท์</p>
+          <p class="hero-description">ออกเดินทางกับ Puffy เรียนรู้ Prefix สร้างคำศัพท์ใหม่ และพิชิตภารกิจทดสอบความรู้ 45 ข้อ</p>
+          <div class="btn-row">
+            <a class="btn" href="#profile-setup">🚀 เริ่มการผจญภัย</a>
+            <a class="btn btn-secondary" href="content.html">📘 เรียนรู้ Prefix</a>
+            <a class="btn btn-gold" href="mission.html" data-requires-profile>💎 เข้าสู่ภารกิจ 45 ข้อ</a>
+          </div>
+          <div class="puffy-wrap" style="margin-top:26px">
+            <div class="puffy" data-mood="excited" role="img" aria-label="Puffy กำลังตื่นเต้น">
+              <div class="puffy-face" aria-hidden="true"><span class="puffy-eye left"></span><span class="puffy-eye right"></span><span class="puffy-mouth"></span></div>
+            </div>
+            <div class="speech-bubble"><strong>สวัสดี Word Explorer!</strong><br>พร้อมตามหา Prefix Crystals ไปด้วยกันไหม?</div>
+          </div>
+        </div>
+
+        <div class="hero-scene" id="hero-scene" data-scene="home" aria-label="ฉากดาวเคราะห์คำศัพท์สามมิติ ลากเพื่อหมุนดาวได้">
+          <div class="scene-fallback" id="home-fallback" aria-hidden="true">
+            <div class="css-planet"></div>
+            <span class="orbit-word">un-</span><span class="orbit-word">re-</span><span class="orbit-word">pre-</span><span class="orbit-word">inter-</span>
+          </div>
+          <span class="scene-hint">ลากหรือปัดเพื่อหมุนดาว</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="profile-setup" aria-labelledby="profile-title">
+      <div class="container profile-layout">
+        <div class="profile-intro card">
+          <span class="eyebrow" style="background:rgba(255,255,255,.16);color:white;border-color:rgba(255,255,255,.28)">Explorer Profile</span>
+          <h2 id="profile-title">สร้างบัตรนักสำรวจคำศัพท์</h2>
+          <p>ข้อมูลนี้ใช้แสดงบนภารกิจและใบผลคะแนน โดยเก็บไว้เฉพาะในอุปกรณ์ของคุณ</p>
+          <div class="puffy-wrap" style="margin-top:28px">
+            <div class="puffy" data-mood="happy" role="img" aria-label="Puffy กำลังดีใจ"><div class="puffy-face" aria-hidden="true"><span class="puffy-eye left"></span><span class="puffy-eye right"></span><span class="puffy-mouth"></span></div></div>
+            <div><strong>ภารกิจแรก</strong><br><span style="opacity:.85">เตรียมโปรไฟล์ให้พร้อมก่อนออกเดินทาง</span></div>
+          </div>
+        </div>
+
+        <form class="profile-form card" id="profile-form" novalidate>
+          <div class="form-grid">
+            <div class="field" style="grid-column:1/-1">
+              <label for="student-name">ชื่อ–นามสกุล</label>
+              <input id="student-name" name="name" maxlength="100" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="student-class">ชั้นเรียน</label>
+              <input id="student-class" name="classroom" maxlength="30" aria-describedby="class-help" required>
+              <small id="class-help">ตัวอย่าง: ม.5/2</small>
+            </div>
+            <div class="field">
+              <label for="student-number">เลขที่</label>
+              <input id="student-number" name="number" maxlength="10" inputmode="numeric" required>
+            </div>
+            <fieldset style="grid-column:1/-1;border:0;padding:0;margin:4px 0">
+              <legend style="font-weight:800;margin-bottom:8px">เลือก Avatar</legend>
+              <div class="avatar-picker" id="home-avatar-picker">
+                <label class="avatar-option"><input type="radio" name="avatar" value="🚀" checked><span aria-hidden="true">🚀</span><span class="sr-only">จรวด</span></label>
+                <label class="avatar-option"><input type="radio" name="avatar" value="🪐"><span aria-hidden="true">🪐</span><span class="sr-only">ดาวเคราะห์</span></label>
+                <label class="avatar-option"><input type="radio" name="avatar" value="🤖"><span aria-hidden="true">🤖</span><span class="sr-only">หุ่นยนต์</span></label>
+                <label class="avatar-option"><input type="radio" name="avatar" value="🌟"><span aria-hidden="true">🌟</span><span class="sr-only">ดาว</span></label>
+                <label class="avatar-option"><input type="radio" name="avatar" value="🛰️"><span aria-hidden="true">🛰️</span><span class="sr-only">ดาวเทียม</span></label>
+                <label class="avatar-option"><input type="radio" name="avatar" value="👩‍🚀"><span aria-hidden="true">👩‍🚀</span><span class="sr-only">นักบินอวกาศ</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <p id="profile-error" class="danger-text" role="alert" style="min-height:24px;margin:8px 0"></p>
+          <button class="btn btn-block" type="submit">💾 บันทึกบัตรนักสำรวจ</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">เส้นทางการเรียนรู้</span>
+          <h2 id="journey-title">4 ขั้นตอนสู่การเป็น Prefix Master</h2>
+          <p>เรียนทีละขั้น ฝึกให้คล่อง แล้วค่อยพิชิตภารกิจใหญ่</p>
+        </div>
+        <div class="feature-grid">
+          <a class="feature-card card" href="content.html" style="--card-accent:var(--primary-soft)"><span class="feature-icon" aria-hidden="true">🔭</span><span class="chip">ขั้นที่ 1</span><h3>รู้จัก Prefix</h3><p>เข้าใจหน้าที่ของคำเติมหน้าและรู้จัก Base Word</p></a>
+          <a class="feature-card card" href="content.html#builder" style="--card-accent:var(--cyan-soft)"><span class="feature-icon" aria-hidden="true">🧩</span><span class="chip chip-cyan">ขั้นที่ 2</span><h3>สร้างคำศัพท์</h3><p>ทดลองประกอบ Prefix กับ Base Word แล้วสังเกตความหมายใหม่</p></a>
+          <a class="feature-card card" href="content.html#practice" style="--card-accent:var(--pink-soft)"><span class="feature-icon" aria-hidden="true">🎮</span><span class="chip chip-pink">ขั้นที่ 3</span><h3>เล่นเกมฝึกฝน</h3><p>ฝึก 4 เกม รับคำใบ้ทันที และสะสม Prefix Crystals</p></a>
+          <a class="feature-card card" href="mission.html" data-requires-profile style="--card-accent:var(--gold-soft)"><span class="feature-icon" aria-hidden="true">💎</span><span class="chip chip-gold">ขั้นที่ 4</span><h3>พิชิตภารกิจ 45 ข้อ</h3><p>เดินทางผ่านดาว 5 ดวงและกู้คืนจักรวาลคำศัพท์</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="daily-title">
+      <div class="container">
+        <div class="section-title"><span class="eyebrow">Word of the Day</span><h2 id="daily-title">คำศัพท์ประจำวัน</h2><p>คำใหม่หนึ่งคำ เปลี่ยนทุกวันตามวันที่ในอุปกรณ์</p></div>
+        <article class="daily-card card" id="word-of-day" aria-live="polite">
+          <div class="daily-visual"><div class="daily-word" id="daily-new-word">rewrite</div></div>
+          <div class="daily-details">
+            <div class="word-equation"><span class="part-prefix" id="daily-prefix">re-</span><span>+</span><span class="part-base" id="daily-base">write</span><span>=</span><span class="part-new" id="daily-result">rewrite</span></div>
+            <div><span class="chip" id="daily-pos">verb</span></div>
+            <p><strong>ความหมาย:</strong> <span id="daily-meaning">เขียนใหม่</span></p>
+            <div class="soft-panel"><p class="en" id="daily-example" style="margin-bottom:4px">Please rewrite the final paragraph.</p><p class="muted" id="daily-translation" style="margin:0">กรุณาเขียนย่อหน้าสุดท้ายใหม่</p></div>
+            <button class="btn btn-secondary" id="daily-speak" type="button" data-speak="rewrite" aria-label="ฟังการออกเสียงคำศัพท์ประจำวัน">🔊 ฟังการออกเสียง</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="progress-title">
+      <div class="container">
+        <div class="section-title"><span class="eyebrow">Learning Progress</span><h2 id="progress-title">ความก้าวหน้าของนักสำรวจ</h2><p>ทุกบทเรียน เกม และภารกิจจะบันทึกอัตโนมัติในอุปกรณ์นี้</p></div>
+        <div class="progress-grid" id="home-progress">
+          <div class="stat-card card"><div class="stat-value" data-stat="lessons">0/4</div><div class="stat-label">บทเรียนที่เรียนแล้ว</div></div>
+          <div class="stat-card card"><div class="stat-value" data-stat="games">0/4</div><div class="stat-label">เกมฝึกฝนที่ผ่าน</div></div>
+          <div class="stat-card card"><div class="stat-value" data-stat="latest">0/45</div><div class="stat-label">คะแนนล่าสุด</div></div>
+          <div class="stat-card card"><div class="stat-value" data-stat="best">0/45</div><div class="stat-label">คะแนนสูงสุด</div></div>
+        </div>
+        <div class="card" style="margin-top:16px"><strong>Badge ที่ได้รับ</strong><div class="btn-row" id="home-badges" style="margin-top:10px"><span class="muted">ยังไม่มี Badge</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
