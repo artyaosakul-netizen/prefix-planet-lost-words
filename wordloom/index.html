@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="th" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="Wordloom ห้องเรียน Prefix แบบมินิมอล พร้อมแบบทดสอบ 60 ข้อ">
+  <title>Wordloom — Prefix Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+  <noscript><div class="noscript">เว็บไซต์นี้ต้องเปิด JavaScript เพื่อใช้งานบทเรียนและแบบทดสอบ</div></noscript>
+
+  <div id="loading" class="loading" role="status" aria-live="polite">
+    <div class="loading-mark" aria-hidden="true"></div>
+    <span>กำลังจัดโต๊ะเรียน…</span>
+  </div>
+
+  <header class="topbar">
+    <button class="brand" type="button" data-route="home" aria-label="กลับหน้าหลัก">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><b>WORDLOOM</b><small>PREFIX STUDIO</small></span>
+    </button>
+    <nav class="primary-nav" aria-label="เมนูหลัก">
+      <button type="button" data-route="home" class="is-active">ภาพรวม</button>
+      <button type="button" data-route="learn">บทเรียน</button>
+      <button type="button" data-route="practice">ฝึกคำ</button>
+      <button type="button" data-route="quiz">แบบทดสอบ</button>
+    </nav>
+    <div class="top-actions">
+      <button id="soundToggle" class="icon-button" type="button" aria-label="เปิดหรือปิดเสียง" title="เสียง">♪</button>
+      <button id="themeToggle" class="icon-button" type="button" aria-label="สลับโหมดสี" title="โหมดสี">◐</button>
+      <button id="menuToggle" class="menu-button" type="button" aria-label="เปิดเมนู" aria-expanded="false">เมนู</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="view-home" class="view is-active" data-view="home" tabindex="-1">
+      <div class="hero container">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">A QUIET PLACE FOR WORDS</p>
+          <h1>มองคำให้เห็น<br><em>โครงสร้าง</em></h1>
+          <p class="hero-lead">เรียนรู้ Prefix ผ่านรูปแบบที่เรียบง่าย ค่อย ๆ แยกส่วน ประกอบความหมาย และนำไปใช้กับคำใหม่ได้ด้วยตนเอง</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-route="learn">เริ่มเรียนรู้</button>
+            <button class="button button-quiet" type="button" data-route="quiz">ทำแบบทดสอบ 60 ข้อ <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+        <div class="word-composition reveal" aria-label="ตัวอย่างการประกอบคำ">
+          <p>THE WORD FORMULA</p>
+          <div class="formula-row"><span>re</span><b>+</b><span>write</span></div>
+          <div class="formula-line"></div>
+          <strong>rewrite</strong>
+          <small>เขียนใหม่อีกครั้ง</small>
+          <div class="composition-note">Prefix เปลี่ยนทิศทางของความหมาย<br>โดยที่ Base Word ยังเป็นแกนกลาง</div>
+        </div>
+      </div>
+
+      <div class="facts-band">
+        <div class="container facts-grid">
+          <article><b>24</b><span>Prefix สำคัญ</span></article>
+          <article><b>06</b><span>ชุดการเรียนรู้</span></article>
+          <article><b>60</b><span>คำถามจริง</span></article>
+          <article><b>80%</b><span>เกณฑ์ผ่าน</span></article>
+        </div>
+      </div>
+
+      <section class="container section-block">
+        <div class="section-heading">
+          <div><p class="eyebrow">THE COLLECTIONS</p><h2>หกชุดความคิด</h2></div>
+          <p>เรียงจากการเปลี่ยนความหมายพื้นฐาน ไปสู่การวิเคราะห์คำหลายชั้นในบริบทจริง</p>
+        </div>
+        <div id="collectionPreview" class="collection-grid"></div>
+      </section>
+
+      <section class="profile-strip">
+        <div class="container profile-grid">
+          <div>
+            <p class="eyebrow">YOUR WORKSPACE</p>
+            <h2>เตรียมพื้นที่เรียนของคุณ</h2>
+            <p>บันทึกความคืบหน้าไว้ในอุปกรณ์นี้ กลับมาทำต่อได้ตลอดเวลา</p>
+          </div>
+          <form id="profileForm" class="profile-form">
+            <label>ชื่อ–นามสกุล<input id="studentName" name="studentName" autocomplete="name" required placeholder="กรอกชื่อผู้เรียน"></label>
+            <div class="field-row">
+              <label>ชั้น<input id="studentClass" name="studentClass" required placeholder="เช่น ม.2/1"></label>
+              <label>เลขที่<input id="studentNumber" name="studentNumber" inputmode="numeric" required placeholder="เช่น 12"></label>
+            </div>
+            <fieldset>
+              <legend>เลือกสัญลักษณ์ประจำตัว</legend>
+              <div id="avatarChoices" class="avatar-choices">
+                <label><input type="radio" name="avatar" value="arc" checked><span class="avatar avatar-arc" aria-label="เส้นโค้ง"></span></label>
+                <label><input type="radio" name="avatar" value="dot"><span class="avatar avatar-dot" aria-label="จุด"></span></label>
+                <label><input type="radio" name="avatar" value="grid"><span class="avatar avatar-grid" aria-label="ตาราง"></span></label>
+                <label><input type="radio" name="avatar" value="wave"><span class="avatar avatar-wave" aria-label="คลื่น"></span></label>
+              </div>
+            </fieldset>
+            <button class="button button-primary button-wide" type="submit">บันทึกข้อมูลผู้เรียน</button>
+            <p id="profileStatus" class="form-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </section>
+
+    <section id="view-learn" class="view" data-view="learn" tabindex="-1">
+      <div class="page-intro container">
+        <p class="eyebrow">PREFIX NOTES</p>
+        <h1>บทเรียนที่เปิดอ่าน<br>เหมือนสมุดบันทึก</h1>
+        <p>เลือกชุดคำแล้วค่อย ๆ ดูว่า Prefix เติมมุมมองใหม่ให้ Base Word อย่างไร</p>
+      </div>
+      <div class="container learning-layout">
+        <aside class="lesson-index" aria-label="สารบัญบทเรียน">
+          <p>สารบัญ</p>
+          <div id="lessonTabs"></div>
+        </aside>
+        <article id="lessonContent" class="lesson-paper" aria-live="polite"></article>
+      </div>
+      <section class="container builder-section">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">WORD BUILDER</p><h2>โต๊ะประกอบคำ</h2></div>
+          <p>เลือก Prefix และ Base Word เพื่อสังเกตการเปลี่ยนความหมาย</p>
+        </div>
+        <div class="builder-card">
+          <label>Prefix<select id="builderPrefix" aria-label="เลือก Prefix"></select></label>
+          <span aria-hidden="true">+</span>
+          <label>Base Word<select id="builderBase" aria-label="เลือก Base Word"></select></label>
+          <span aria-hidden="true">=</span>
+          <div id="builderResult" class="builder-result" aria-live="polite"></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="view-practice" class="view" data-view="practice" tabindex="-1">
+      <div class="page-intro container">
+        <p class="eyebrow">WORD PRACTICE</p>
+        <h1>ฝึกสั้น ๆ<br>ก่อนลงมือจริง</h1>
+        <p>ไม่มีเวลา ไม่มีแรงกดดัน พลิกบัตรเพื่อดูคำตอบ หรือเล่นรอบสุ่ม 10 คำ</p>
+      </div>
+      <div class="container practice-toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="wordSearch" type="search" placeholder="ค้นหา Prefix หรือคำศัพท์" aria-label="ค้นหาคำศัพท์"></label>
+        <select id="wordFilter" aria-label="กรองชุดคำ"><option value="all">ทุกชุด</option></select>
+        <button id="shuffleWords" class="button button-quiet" type="button">สุ่มลำดับ</button>
+      </div>
+      <div id="wordGrid" class="container word-grid" aria-live="polite"></div>
+      <section class="container quick-practice">
+        <div class="practice-panel">
+          <p class="eyebrow">TEN-WORD ROUND</p>
+          <h2>รอบฝึก 10 คำ</h2>
+          <p id="practicePrompt">กดเริ่มเพื่อสุ่มคำถามสั้น ๆ จากคลังคำ</p>
+          <div id="practiceOptions" class="practice-options"></div>
+          <div class="practice-footer"><span id="practiceScore">0 / 0</span><button id="practiceStart" class="button button-primary" type="button">เริ่มรอบฝึก</button></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="view-quiz" class="view" data-view="quiz" tabindex="-1">
+      <div id="quizWelcome" class="quiz-welcome container">
+        <div class="quiz-welcome-copy">
+          <p class="eyebrow">THE 60-WORD EDITION</p>
+          <h1>แบบทดสอบ<br>วิเคราะห์ Prefix</h1>
+          <p>60 ข้อ · 60 คะแนน · เวลาแนะนำ 60 นาที · ผ่าน 48 คะแนน</p>
+          <ul>
+            <li>คำถามแสดงครั้งละ 1 ข้อ และย้อนกลับได้</li>
+            <li>ระบบบันทึกคำตอบอัตโนมัติในอุปกรณ์นี้</li>
+            <li>จะไม่เฉลยจนกว่าคุณกดส่งคำตอบ</li>
+          </ul>
+          <button id="beginQuiz" class="button button-primary" type="button">เริ่มแบบทดสอบ</button>
+          <button id="resumeQuiz" class="button button-quiet hidden" type="button">ทำต่อจากครั้งก่อน</button>
+        </div>
+        <div class="quiz-specimen" aria-hidden="true"><span>60</span><i>questions</i><b>01—06</b></div>
+      </div>
+
+      <div id="quizWorkspace" class="quiz-workspace hidden">
+        <div class="quiz-statusbar">
+          <div><span id="quizCollectionLabel">ชุดที่ 1</span><strong id="quizCounter">ข้อ 1 จาก 60</strong></div>
+          <div class="timer-wrap"><span>เวลาคงเหลือ</span><strong id="timer">60:00</strong></div>
+          <div class="status-actions"><button id="focusToggle" class="small-button" type="button">โหมดโฟกัส</button><button id="exitQuiz" class="small-button" type="button">พักไว้ก่อน</button></div>
+        </div>
+        <div class="quiz-progress" aria-label="ความก้าวหน้า"><span id="quizProgressBar"></span></div>
+        <div class="quiz-layout container">
+          <aside class="quiz-aside">
+            <p>ชุดคำ</p>
+            <div id="quizCollections" class="quiz-collections"></div>
+            <div class="completion-count"><span id="answeredCount">0</span><small>ตอบแล้ว<br>จาก 60</small></div>
+          </aside>
+          <section class="question-card" aria-live="polite">
+            <div class="question-meta"><span id="questionType">MULTIPLE CHOICE</span><span id="questionDifficulty">พื้นฐาน</span></div>
+            <h2 id="questionText"></h2>
+            <div id="questionOptions" class="question-options" role="radiogroup" aria-label="ตัวเลือกคำตอบ"></div>
+            <div class="question-controls">
+              <button id="prevQuestion" class="button button-quiet" type="button">← ข้อก่อนหน้า</button>
+              <button id="markQuestion" class="mark-button" type="button" aria-pressed="false">◇ ทำเครื่องหมาย</button>
+              <button id="nextQuestion" class="button button-primary" type="button">ข้อต่อไป →</button>
+            </div>
+          </section>
+          <aside class="navigator-wrap">
+            <div class="navigator-heading"><p>หมายเลขข้อ</p><button id="toggleNavigator" type="button" aria-expanded="true">ย่อ</button></div>
+            <div id="questionNavigator" class="question-navigator"></div>
+            <div class="navigator-legend"><span><i class="answered"></i>ตอบแล้ว</span><span><i class="current"></i>กำลังทำ</span><span><i class="marked"></i>ทบทวน</span></div>
+            <button id="submitQuiz" class="button button-dark button-wide" type="button">ส่งคำตอบ</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-result" class="view" data-view="result" tabindex="-1">
+      <div id="resultContent" class="result-page container"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><span>WORDLOOM / PREFIX STUDIO</span><p>แยกคำ · มองความหมาย · ใช้ภาษาอย่างมั่นใจ</p><button id="backToTop" type="button">กลับด้านบน ↑</button></div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="transitionOverlay" class="transition-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="transitionTitle">
+    <div><p>COLLECTION COMPLETE</p><h2 id="transitionTitle">จบชุดคำแล้ว</h2><span id="transitionText"></span><button id="skipTransition" class="button button-quiet" type="button">ไปต่อทันที</button></div>
+  </div>
+
+  <dialog id="customModal" class="modal">
+    <form method="dialog">
+      <p id="modalEyebrow" class="eyebrow">PLEASE CHECK</p>
+      <h2 id="modalTitle">ยืนยันการทำรายการ</h2>
+      <div id="modalBody"></div>
+      <div class="modal-actions"><button id="modalCancel" class="button button-quiet" value="cancel">ยกเลิก</button><button id="modalConfirm" class="button button-dark" value="confirm">ยืนยัน</button></div>
+    </form>
+  </dialog>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
